@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers static-assets config for the Mr. Electric of Tucson
+  // identity node served at https://companysignet.com/
+  //
+  // No build step and no Worker script: this project serves the contents of
+  // ./public as static assets. See:
+  // https://developers.cloudflare.com/workers/static-assets/
+  "name": "companysignet-site",
+  "compatibility_date": "2026-08-16",
+  "assets": {
+    "directory": "./public"
+  }
+}

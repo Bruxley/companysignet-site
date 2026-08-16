@@ -5,8 +5,14 @@
   // No build step and no Worker script: this project serves the contents of
   // ./public as static assets. See:
   // https://developers.cloudflare.com/workers/static-assets/
+  //
+  // workers_dev / preview_urls are disabled so this page is reachable only at
+  // its canonical domain — it is an identity reference, so duplicate addresses
+  // are undesirable.
   "name": "companysignet-site",
   "compatibility_date": "2026-08-16",
+  "workers_dev": false,
+  "preview_urls": false,
   "assets": {
     "directory": "./public"
   }

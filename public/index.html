@@ -17,6 +17,12 @@
       Apple Maps, Facebook, Yelp, Bing Maps, Chamber of Southern AZ, SAHBA, Marana
       Chamber, Nextdoor, LinkedIn
     - geo; correct NAP only (Ste E3 / 520-795-5940); polluted variants excluded.
+    - areaServed: 16 QID-linked communities. City = incorporated municipality (own
+      government); Place = CDP or neighborhood (no jurisdiction of its own, so
+      AdministrativeArea would over-claim; schema.org has no Neighborhood type,
+      confirmed against v30.0). additionalType carries the exact
+      Wikidata P31 class inline so agents need not dereference 16 QIDs. Broader
+      Southern Arizona coverage is asserted in `description`, not in areaServed.
     - links out to the OKF knowledge bundle at /okf/ (second part of the
       "About this reference" note + JSON-LD subjectOf/Dataset) so agents
       arriving at this node can discover it.
@@ -62,10 +68,56 @@
       "latitude": 32.2202192,
       "longitude": -110.8163232
     },
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Tucson and Southern Arizona"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Tucson",
+        "sameAs": "https://www.wikidata.org/wiki/Q18575",
+        "additionalType": "https://www.wikidata.org/wiki/Q1093829" },
+      { "@type": "City", "name": "Marana",
+        "sameAs": "https://www.wikidata.org/wiki/Q762743",
+        "additionalType": "https://www.wikidata.org/wiki/Q15127012" },
+      { "@type": "City", "name": "Oro Valley",
+        "sameAs": "https://www.wikidata.org/wiki/Q986523",
+        "additionalType": "https://www.wikidata.org/wiki/Q15127012" },
+      { "@type": "City", "name": "Sahuarita",
+        "sameAs": "https://www.wikidata.org/wiki/Q914860",
+        "additionalType": "https://www.wikidata.org/wiki/Q15127012" },
+      { "@type": "City", "name": "South Tucson",
+        "sameAs": "https://www.wikidata.org/wiki/Q79893",
+        "additionalType": "https://www.wikidata.org/wiki/Q1093829" },
+      { "@type": "Place", "name": "Vail",
+        "sameAs": "https://www.wikidata.org/wiki/Q1560792",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Green Valley",
+        "sameAs": "https://www.wikidata.org/wiki/Q1544683",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Casas Adobes",
+        "sameAs": "https://www.wikidata.org/wiki/Q79406",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Tanque Verde",
+        "sameAs": "https://www.wikidata.org/wiki/Q1862070",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Flowing Wells",
+        "sameAs": "https://www.wikidata.org/wiki/Q1430353",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Civano",
+        "sameAs": "https://www.wikidata.org/wiki/Q122552486",
+        "additionalType": "https://www.wikidata.org/wiki/Q123705" },
+      { "@type": "Place", "name": "Drexel Heights",
+        "sameAs": "https://www.wikidata.org/wiki/Q1258838",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Tucson Estates",
+        "sameAs": "https://www.wikidata.org/wiki/Q1890809",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Catalina Foothills",
+        "sameAs": "https://www.wikidata.org/wiki/Q1050250",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" },
+      { "@type": "Place", "name": "Rita Ranch",
+        "sameAs": "https://www.wikidata.org/wiki/Q7336592",
+        "additionalType": "https://www.wikidata.org/wiki/Q123705" },
+      { "@type": "Place", "name": "Corona de Tucson",
+        "sameAs": "https://www.wikidata.org/wiki/Q1024093",
+        "additionalType": "https://www.wikidata.org/wiki/Q498162" }
+    ],
     "parentOrganization": {
       "@type": "Organization",
       "name": "Mr. Electric",
@@ -126,7 +178,7 @@
       "@type": "Organization",
       "name": "Acuity LLC"
     },
-    "dateModified": "2026-08-16"
+    "dateModified": "2026-08-19"
   }
   </script>
 
